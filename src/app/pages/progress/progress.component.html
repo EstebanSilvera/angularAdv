@@ -8,7 +8,17 @@
             <div
               class="progress-bar bg-info progress-bar-striped active"
               style="height: 10px"
-              [style.width]="getProgreso"
+              role="progressbar"
+              [style.width]="getProgreso1"
+            >
+              <span class="sr-only">85% Complete (success)</span>
+            </div>
+          </div>
+          <div class="progress m-t-20">
+            <div
+              class="progress-bar bg-danger progress-bar-striped active"
+              style="height: 10px"
+              [style.width]="getProgreso2"
               role="progressbar"
             >
               <span class="sr-only">85% Complete (success)</span>
@@ -24,30 +34,20 @@
   <div class="col-6">
     <div class="card">
       <div class="card-body">
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button class="btn btn-danger" type="button" (click)="cambiarValor(-5)">-</button>
-          </span>
-          <input type="number" max="100" min="0" class="form-control" placeholder="Product name" [(ngModel)]="progreso" />
-          <span class="input-group-btn">
-            <button class="btn btn-success" type="button" (click)="cambiarValor(5)">+</button>
-          </span>
-        </div>
+        <app-incrementador
+          (ValorSalida)="progreso1 = $event"
+          [valor]="progreso1"
+        ></app-incrementador>
       </div>
     </div>
   </div>
   <div class="col-6">
     <div class="card">
       <div class="card-body">
-        <!-- <div class="input-group">
-          <span class="input-group-btn">
-            <button class="btn btn-danger" type="button">-</button>
-          </span>
-          <input type="text" class="form-control" placeholder="Product name" />
-          <span class="input-group-btn">
-            <button class="btn btn-success" type="button">+</button>
-          </span>
-        </div> -->
+        <app-incrementador
+          (ValorSalida)="progreso2 = $event"
+          [valor]="progreso2"
+        ></app-incrementador>
       </div>
     </div>
   </div>
