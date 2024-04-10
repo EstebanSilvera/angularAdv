@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class IncrementadorComponent {
   @Input('valor') progreso: number = 50;
+
   @Input() btnClass: string = 'btn btn-info';
 
   @Output() ValorSalida: EventEmitter<number> = new EventEmitter();
@@ -30,15 +31,15 @@ export class IncrementadorComponent {
   }
 
   onChange(valor: number) {
-
-    console.log(valor)
+    
+    console.log(valor);
 
     if (valor >= 100) {
-      this.progreso = 100
+      this.progreso = 100;
     } else if (valor <= 0) {
-      this.progreso = 0
-    }else{
-      this.progreso = valor
+      this.progreso = 0;
+    } else {
+      this.progreso = valor;
     }
 
     this.ValorSalida.emit(this.progreso);
