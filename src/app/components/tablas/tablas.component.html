@@ -1,0 +1,29 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">nombre</th>
+        <th scope="col">edad</th>
+        <th scope="col">subir/bajar</th>
+        <th scope="col">selecionar</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let personal of personas">
+      <tr>
+        <td>{{ personal.id }}</td>
+        <td>{{ personal.nombre }}</td>
+        <td>{{ personal.edad }}</td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" (click)="minEdad(personal.id)" class="btn btn-danger">-</button>
+            <button type="button" (click)="maxEdad(personal.id)" class="btn btn-success">+</button>
+          </div>
+        </td>
+        <td>      
+           <button type="button" (click)="select(personal, personal.id)" class="btn btn-success">Select</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

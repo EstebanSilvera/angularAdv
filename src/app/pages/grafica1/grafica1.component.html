@@ -1,1 +1,35 @@
-<p>grafica1 works!</p>
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-tablas></app-tablas>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-tablas
+        (edad)="personas1[0] = $event"
+        ></app-tablas>
+        <p>{{ personas1[0].id }}</p>
+        <p>{{ personas1[0].nombre }}</p>
+        <p>{{ personas1[0].edad }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-tablas></app-tablas>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-tablas></app-tablas>
+      </div>
+    </div>
+  </div>
+</div>
